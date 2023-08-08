@@ -1,0 +1,30 @@
+{
+  "name": "sdpi-gvr-member-gathering",
+  "version": "0.0.1",
+  "description": "ഗുരുവായൂർ മണ്ഡലത്തിലെ SDPI യുടെ മുഴുവൻ പ്രവർത്തകരുടെയും പുനഃക്രമീകരണ പ്രക്രിയ",
+  "productName": "ഗുരുവായൂർ മണ്ഡലം SDPI പ്രവർത്തകരുടെ പുനഃക്രമീകരണം",
+  "author": "Firose Hussain <github@firumon.com>",
+  "private": true,
+  "scripts": {
+    "dev": "quasar dev",
+    "build": "quasar build"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.0.0",
+    "firebase": "^10.1.0",
+    "pinia": "^2.0.11",
+    "quasar": "^2.6.0",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "@quasar/app-vite": "^1.0.0",
+    "autoprefixer": "^10.4.2",
+    "postcss": "^8.4.14"
+  },
+  "engines": {
+    "node": "^18 || ^16 || ^14.19",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
+}

@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import Welcome from "components/Welcome.vue";
+import Welcome from "components/Gathering/Welcome.vue";
 </script>
 
 <style>

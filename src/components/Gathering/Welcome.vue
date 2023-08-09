@@ -13,7 +13,7 @@
 </script>
 
 
-<style scoped>
+<style>
 .container {
   background: url("flag.png") left top no-repeat;
   padding: 85px 0px 0px 40px;

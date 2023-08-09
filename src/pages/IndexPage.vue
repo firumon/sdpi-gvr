@@ -1,17 +1,16 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page class="flex flex-center page-background">
+    <Welcome />
   </q-page>
 </template>
 
-<script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'IndexPage'
-})
+<script setup>
+import Welcome from "components/Welcome.vue";
 </script>
+
+<style>
+.page-background {
+  background: url("page-background.png") center no-repeat;
+  background-size: cover;
+}
+</style>

@@ -1,4 +1,4 @@
-import {sheetUrl, zipObj} from "assets/constants";
+import {execUrl, zipObj} from "assets/constants";
 
 const CT = String(new Date('Mon, 14 Aug 2023 23:59:59 GMT+530').getTime())
 const IT1 = "ji", IT2 = "ha";
@@ -13,20 +13,20 @@ function StringFromCode(CD64){
 }
 export default function doGet(action,params){
   if(!action) return Promise.reject('No action specified'); if(!params) params = ({})
-  const URL = sheetUrl + '?' + (new URLSearchParams({ action,...params }).toString())
+  const URL = execUrl + '?' + (new URLSearchParams({ action,...params }).toString())
   return new Promise((resolve, reject) => {
     fetch(URL).then(resp => resp.text()).then(CD64 => {
       let string = String(StringFromCode(CD64));
       return JSON.parse(string)
     }).then(json => {
       if(json.error) return reject(json.message);
-      if(json.merge && json.head){
+      if(json.merge && json.head && json[json.merge]){
         if(json.level === 2){
           const data = [];
-          json.data.forEach(row => data.push(zipObj(json.head,row)))
+          json[json.merge].forEach(row => data.push(zipObj(json.head,row)))
           resolve(data)
         } else {
-          resolve(zipObj(json.head,json.data))
+          resolve(zipObj(json.head,json[json.merge]))
         }
       } else {
         let avoid = ['error','message','merge','level'], data = {}
